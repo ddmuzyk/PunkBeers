@@ -1,6 +1,8 @@
 import React, {useState, useEffect} from 'react'
 import ReactDOM from 'react-dom/client'
-import Home from './routes/Home';
+import Home from './routes/root';
+import ErrorPage from './error-page';
+import Page from './routes/page';
 
 import {
   createBrowserRouter,
@@ -12,6 +14,10 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <Home/>,
+    errorElement: <ErrorPage/>,
+    children: [
+      
+    ]
   },
 ]);
 
