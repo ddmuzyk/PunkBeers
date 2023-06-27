@@ -4,9 +4,6 @@ import { Link } from "react-router-dom";
 const Home = () => {
 
   const [didFetch, setDidFetch] = useState(false);
-
-  console.log('fuck youuuu')
-
   // useEffect(() => {
   //   let isMounted = true;
 

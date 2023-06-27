@@ -24,9 +24,9 @@ const router = createBrowserRouter([
   {
     path: "beer/:beer",
     element: <Beer/>,
-    // loader: async () => {
-
-    // },
+    loader: async ({params}) => {
+      const res = await fetch(`https://api.punkapi.com/v2/beers/${params}`)
+    },
     errorElement: <ErrorPage/>
   },
 ]);
