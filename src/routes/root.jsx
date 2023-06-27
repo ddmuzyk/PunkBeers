@@ -5,26 +5,39 @@ const Home = () => {
 
   const [didFetch, setDidFetch] = useState(false);
 
+  console.log('fuck youuuu')
+
   // useEffect(() => {
-  //   // (async () => {
-  //   //   const res = await fetch('https://api.punkapi.com/v2/beers/random');
-  //   //   const data = await res.json();
-  //   //   console.log(data);
-  //   //   setDidFetch(true);
-  //   // })();
-  //   (setTimeout(async() => {
-  //     setDidFetch(true)
-  //     console.log(didFetch)
-  //   }, 1000))
-  // }, [])
+  //   let isMounted = true;
+
+  //   if (!didFetch) {
+  //     (async () => {
+  //       const res = await fetch('https://api.punkapi.com/v2/beers/random');
+  //       const data = await res.json();
+  //       console.log(data);
+        
+  //       if (isMounted) {
+  //         setDidFetch(true);
+  //       }
+  //     })();
+  //   }
+
+  //   return () => {
+  //     isMounted = false;
+  //   };
+  // }, []); // Empty dependency array to run the effect only once
+
+  return didFetch ? <div>SomeData</div> : <h1>Loading...</h1>;
   
 
-  return (
-    <div>
-      <h1>Welcome to beeeers</h1>
-      <Link ></Link>
-    </div>
-  )
+  // return (
+  //   <div>
+  //     <h1>Welcome to beeeers</h1>
+  //     <Link to={'/beer/1'}>
+  //       <button>Go</button>
+  //     </Link>
+  //   </div>
+  // )
 }
 
 export default Home;

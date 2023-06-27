@@ -1,8 +1,10 @@
 import React, {useState, useEffect} from 'react'
 import ReactDOM from 'react-dom/client'
+import { AppWrapper } from './AppWrapper';
 import Home from './routes/root';
 import ErrorPage from './error-page';
 import Page from './routes/page';
+import Beer from './routes/beer';
 
 import {
   createBrowserRouter,
@@ -12,12 +14,20 @@ import './index.css'
 
 const router = createBrowserRouter([
   {
+    element: <AppWrapper/>
+  },
+  {
     path: "/",
     element: <Home/>,
     errorElement: <ErrorPage/>,
-    children: [
-      
-    ]
+  },
+  {
+    path: "beer/:beer",
+    element: <Beer/>,
+    // loader: async () => {
+
+    // },
+    errorElement: <ErrorPage/>
   },
 ]);
 
