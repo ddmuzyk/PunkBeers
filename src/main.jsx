@@ -12,25 +12,36 @@ import {
 } from "react-router-dom";
 import './index.css'
 
+function timeout(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+async function sleep() {
+  await timeout(3000);
+  return true;
+}
+
 const router = createBrowserRouter([
   {
-    element: <AppWrapper/>
-  },
-  {
-    path: "/",
-    element: <Home/>,
-    errorElement: <ErrorPage/>,
-  },
-  {
-    path: "beer/:beer",
-    element: <Beer/>,
-    loader: async ({params}) => {
-      const res = await fetch(`https://api.punkapi.com/v2/beers/${params.beer}`);
-      const data = await res.json();
-      console.log(data);
-      return data;
-    },
-    errorElement: <ErrorPage/>
+    element: <AppWrapper/>,
+    children: [
+      {
+        path: "/",
+        element: <Home/>,
+        errorElement: <ErrorPage/>,
+      },
+      {
+        path: "beer/:beer",
+        element: <Beer/>,
+        loader: async ({params}) => {
+          await sleep();
+          const res = await fetch(`https://api.punkapi.com/v2/beers/${params.beer}`);
+          const data = await res.json();
+          console.log(data);
+          return data;
+        },
+        errorElement: <ErrorPage/>
+      },
+    ]
   },
 ]);
 
