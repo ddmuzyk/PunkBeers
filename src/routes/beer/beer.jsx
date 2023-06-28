@@ -34,7 +34,7 @@ const Beer = () => {
             const subIngredients = ingredients[ingredient];
             return (
               <div className={`${ingredient} ingredient`} key={ingredient}>
-                <h4>{`${ingredient.slice(0,1).toUpperCase()}${ingredient.slice(1)}`}</h4>
+                <h4 className="ingredient-title">{`${ingredient.slice(0,1).toUpperCase()}${ingredient.slice(1)}`}</h4>
                 {Array.isArray(subIngredients) ? (
                   subIngredients.map((subIngredient, i) => {
                     return (

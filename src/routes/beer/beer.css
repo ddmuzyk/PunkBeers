@@ -17,7 +17,7 @@
   text-decoration: none;
   outline: none;
   border: none;
-  background-color: rgb(228, 171, 215);
+  background-color: rgb(190, 158, 183);
   border-radius: 10px;
   box-shadow: var(--btn-shadow);
   margin-top: 20px;
@@ -48,8 +48,18 @@
   text-align: center;
 }
 
+.ingredient-title {
+  text-align: center;
+}
+
 .ingredient {
   width: 100px;
+  background-color: rgb(231, 228, 228);
+  border-radius: 4px;
+  padding: 10px 30px;
+  box-shadow: 0 1px 6px 1px rgba(0, 0, 0, 0.329);
+  margin: 30px;
+  min-height: 300px;
 }
 
 .ingredients {
@@ -59,4 +69,5 @@
   flex-wrap: wrap;
   /* gap: 200px; */
   width: 100%;
+  margin-bottom: 100px;
 }
