@@ -1,19 +1,17 @@
 import { Pagination } from "../components/pagination/Pagination";
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, Link } from "react-router-dom";
 import { BeerCard } from "../components/beer-card/BeerCard";
+import { Header } from "../components/header/Header";
 
 const Page = () => {
 
   const {currentPageId, data} = useLoaderData();
 
   const beers = data;
-  // console.log(data)
 
   return (
     <div className="root-wrapper background">
-      <div className="root-title-container">
-        <h1 className="root-title">Beers</h1>
-      </div>
+      <Header/>
       <Pagination currentPageId={currentPageId}/>
       <div className="beers-wrapper">
         <div className="beers-container">
@@ -23,6 +21,7 @@ const Page = () => {
               name={beer.name}
               imgUrl={beer['image_url']}
               tagline={beer.tagline}
+              id={beer.id}
             />
           })}
         </div>

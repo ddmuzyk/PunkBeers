@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { BeerCard } from "../../components/beer-card/BeerCard";
 import { Pagination } from "../../components/pagination/Pagination";
+import { Header } from "../../components/header/Header";
 import './root.css'
 
 const Home = () => {
@@ -45,12 +46,12 @@ const Home = () => {
     }
   },[])
 
+  // Later delete this component and use the page component
+
   return (
     didFetch ?
     <div className="root-wrapper background">
-      <div className="root-title-container">
-        <h1 className="root-title">Beers</h1>
-      </div>
+      <Header/>
       <Pagination currentPageId={1}/>
       <div className="beers-wrapper">
         <div className="beers-container">
@@ -60,6 +61,7 @@ const Home = () => {
               name={beer.name}
               imgUrl={beer['image_url']}
               tagline={beer.tagline}
+              id={beer.id}
             />
           })}
         </div>

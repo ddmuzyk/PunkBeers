@@ -4,7 +4,7 @@ import { AppWrapper } from './AppWrapper';
 import Home from './routes/root/root';
 import ErrorPage from './error-page';
 import Page from './routes/page';
-import Beer from './routes/beer';
+import Beer from './routes/beer/beer';
 import {
   createBrowserRouter,
   RouterProvider,
@@ -34,8 +34,16 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <Home/>,
+        element: <Page/>,
         errorElement: <ErrorPage/>,
+        loader: async () => {
+          const res = await fetch(`https://api.punkapi.com/v2/beers?page=1&per_page=9`);
+          const data = await res.json();
+          return {
+            currentPageId: 1,
+            data: data,
+          }
+        }
       },
       {
         path: 'page/:id',
@@ -57,8 +65,8 @@ const router = createBrowserRouter([
           // await sleep();
           const res = await fetch(`https://api.punkapi.com/v2/beers/${params.beer}`);
           const data = await res.json();
-          console.log(data);
-          return data;
+          console.log(data[0]);
+          return data[0];
         },
         errorElement: <ErrorPage/>
       },

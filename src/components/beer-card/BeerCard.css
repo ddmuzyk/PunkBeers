@@ -4,7 +4,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 250px;
+  height: 300px;
   width: 120px;
   margin: 20px;
   background-color: rgb(196, 196, 196);
@@ -14,13 +14,17 @@
 }
 
 .beer-card-img {
-  width: 25px;
-  height: auto;
+  max-width: 30px;
+  width: auto;
+  max-height: 90%;
+  height: fit-content;
 }
 
 .beer-card-img-container {
   display: flex;
   justify-content: center;
+  height: 100px;
+  align-items: center;
 }
 
 .beer-card-name {
@@ -29,4 +33,11 @@
 
 .beer-card-tagline {
   text-align: center;
+}
+
+.details-btn {
+  display: flex;
+  justify-content: center;
+  text-decoration: none;
+  cursor: default;
 }
