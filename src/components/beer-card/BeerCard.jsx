@@ -9,9 +9,11 @@ export const BeerCard = ({imgUrl, name, tagline, id}) => {
       </div>
       <h3 className='beer-card-name'>{name}</h3>
       <p className='beer-card-tagline'>{tagline}</p>
-      <Link to={`/beer/${id}`} className='details-btn'>
-        <button>DETAILS</button>
-      </Link>
+      <div className='details-btn-container'>
+        <Link to={`/beer/${id}`}>
+          <button className='details-btn'>DETAILS</button>
+        </Link>
+      </div>
     </div>
   )
 }
