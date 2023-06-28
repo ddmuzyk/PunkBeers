@@ -10,12 +10,13 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import './index.css'
+import { Loader } from './components/loader/Loader';
 
 function timeout(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
 }
-async function sleep() {
-  await timeout(1500);
+async function sleep(ms) {
+  await timeout(ms);
   return true;
 }
 
@@ -65,9 +66,14 @@ const router = createBrowserRouter([
           // await sleep();
           const res = await fetch(`https://api.punkapi.com/v2/beers/${params.beer}`);
           const data = await res.json();
-          console.log(data[0]);
+          // console.log(data[0]);
           return data[0];
         },
+        errorElement: <ErrorPage/>
+      },
+      {
+        path: '/loading/',
+        element: <Loader/>,
         errorElement: <ErrorPage/>
       },
     ]
