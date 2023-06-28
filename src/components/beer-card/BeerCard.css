@@ -1,11 +1,9 @@
-
-
 .beer-card-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 300px;
-  width: 120px;
+  height: 400px;
+  width: 150px;
   margin: 20px;
   background-color: rgb(196, 196, 196);
   padding: 20px 50px;
@@ -14,7 +12,7 @@
 }
 
 .beer-card-img {
-  max-width: 30px;
+  max-width: 70px;
   width: auto;
   max-height: 90%;
   height: fit-content;

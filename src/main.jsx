@@ -10,12 +10,13 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import './index.css'
+import { Loader } from './components/loader/Loader';
 
 function timeout(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
 }
-async function sleep() {
-  await timeout(1500);
+async function sleep(ms) {
+  await timeout(ms);
   return true;
 }
 
@@ -69,6 +70,10 @@ const router = createBrowserRouter([
           return data[0];
         },
         errorElement: <ErrorPage/>
+      },
+      {
+        path: '/loading/',
+        element: <Loader/>
       },
     ]
   },
