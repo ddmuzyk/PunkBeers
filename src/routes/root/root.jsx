@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { BeerCard } from "../../components/beer-card/BeerCard";
+import { Pagination } from "../../components/pagination/Pagination";
 import './root.css'
 
 const Home = () => {
@@ -33,7 +34,8 @@ const Home = () => {
   useEffect(() => {
     if (!didFetch) {
       (async () => {
-        const res = await fetch('https://api.punkapi.com/v2/beers?page=1&per_page=10');
+        // There are 37 pages with 9 items per page
+        const res = await fetch('https://api.punkapi.com/v2/beers?page=1&per_page=9');
         const data = await res.json();
         console.log(data);
         setBeers(data)
@@ -47,21 +49,25 @@ const Home = () => {
     didFetch ?
     <div className="root-wrapper background">
       <div className="root-title-container">
-        <h1 className="root-title">Welcome to beeeers</h1>
+        <h1 className="root-title">Beers</h1>
       </div>
-      <div className="beers-container">
-        {beers.map((beer) => {
-          return <BeerCard 
-            key={beer.name}
-            name={beer.name}
-            imgUrl={beer['image_url']}
-            tagline={beer.tagline}
-          />
-        })}
+      <Pagination/>
+      <div className="beers-wrapper">
+        <div className="beers-container">
+          {beers.map((beer) => {
+            return <BeerCard 
+              key={beer.name}
+              name={beer.name}
+              imgUrl={beer['image_url']}
+              tagline={beer.tagline}
+            />
+          })}
+        </div>
       </div>
-      <Link to={'/beer/2'}>
+      {/* <Link to={'/beer/2'}>
         <button>Go</button>
-      </Link>
+      </Link> */}
+      <Pagination/>
     </div>
     : 
     <h1>Loading...</h1>
