@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { BeerCard } from "../../components/beer-card/BeerCard";
 import { Pagination } from "../../components/pagination/Pagination";
+import { Header } from "../../components/header/Header";
 import './root.css'
 
 const Home = () => {
@@ -50,9 +51,7 @@ const Home = () => {
   return (
     didFetch ?
     <div className="root-wrapper background">
-      <div className="root-title-container">
-        <h1 className="root-title">Beers</h1>
-      </div>
+      <Header/>
       <Pagination currentPageId={1}/>
       <div className="beers-wrapper">
         <div className="beers-container">

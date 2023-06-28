@@ -57,8 +57,8 @@ const router = createBrowserRouter([
           // await sleep();
           const res = await fetch(`https://api.punkapi.com/v2/beers/${params.beer}`);
           const data = await res.json();
-          console.log(data);
-          return data;
+          console.log(data[0]);
+          return data[0];
         },
         errorElement: <ErrorPage/>
       },
