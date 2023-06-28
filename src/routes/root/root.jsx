@@ -51,7 +51,7 @@ const Home = () => {
       <div className="root-title-container">
         <h1 className="root-title">Beers</h1>
       </div>
-      <Pagination/>
+      <Pagination currentPageId={1}/>
       <div className="beers-wrapper">
         <div className="beers-container">
           {beers.map((beer) => {
@@ -67,7 +67,7 @@ const Home = () => {
       {/* <Link to={'/beer/2'}>
         <button>Go</button>
       </Link> */}
-      <Pagination/>
+      <Pagination currentPageId={1}/>
     </div>
     : 
     <h1>Loading...</h1>
