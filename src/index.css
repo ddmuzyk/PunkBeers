@@ -67,3 +67,20 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 } */
+
+html {
+  height: 100%;
+}
+
+body {
+  min-height: 100%;
+  margin: 0;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+.background {
+  background-color: whitesmoke;
+}
