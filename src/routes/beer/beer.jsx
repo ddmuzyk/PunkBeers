@@ -1,18 +1,24 @@
 import { useLoaderData } from "react-router-dom";
 import './Beer.css';
 import { Header } from "../../components/header/Header";
+import { Link } from "react-router-dom";
 
 const Beer = () => {
 
   const {name, tagline, id, ingredients, description, abv, ibu, image_url} = useLoaderData();
 
-  // const ingredientsArray = Object.keys(ingredients);
+  // Getting the page associated with the beer based on the fact that every page has 9 beers.
+  const page = id % 9 > 0 ? Math.floor(id / 9) + 1 : Math.floor(id / 9);
+ 
 
   return (
     <div className="beer-container">
-    <Header/>
+      <Header/>
+      <div className="back-btn-container">
+        <Link to={page === 1 ? '/' : `/page/${page}`}>Back to page</Link>
+      </div>
       <div className="beer-img-container">
-        <img src={image_url} className="beer-img"/>
+        <img src={image_url} alt="Beer Image" className="beer-img"/>
       </div>
         <h1 className="beer-name">{name}</h1>
         <h2>{tagline}</h2>
@@ -24,7 +30,7 @@ const Beer = () => {
           {Object.keys(ingredients).map((ingredient) => {
             const subIngredients = ingredients[ingredient];
             return (
-              <div className={`${ingredient}`} key={ingredient}>
+              <div className={`${ingredient} ingredient`} key={ingredient}>
                 <h4>{`${ingredient.slice(0,1).toUpperCase()}${ingredient.slice(1)}`}</h4>
                 {Array.isArray(subIngredients) ? (
                   subIngredients.map((subIngredient, i) => {

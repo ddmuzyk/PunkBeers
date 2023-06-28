@@ -34,8 +34,16 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <Home/>,
+        element: <Page/>,
         errorElement: <ErrorPage/>,
+        loader: async () => {
+          const res = await fetch(`https://api.punkapi.com/v2/beers?page=1&per_page=9`);
+          const data = await res.json();
+          return {
+            currentPageId: 1,
+            data: data,
+          }
+        }
       },
       {
         path: 'page/:id',

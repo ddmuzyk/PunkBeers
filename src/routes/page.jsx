@@ -8,9 +8,6 @@ const Page = () => {
   const {currentPageId, data} = useLoaderData();
 
   const beers = data;
-  // console.log(data)
-
-  console.log(beers)
 
   return (
     <div className="root-wrapper background">
