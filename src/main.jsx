@@ -4,7 +4,7 @@ import { AppWrapper } from './AppWrapper';
 import Home from './routes/root/root';
 import ErrorPage from './error-page';
 import Page from './routes/page';
-import Beer from './routes/beer';
+import Beer from './routes/beer/beer';
 import {
   createBrowserRouter,
   RouterProvider,

@@ -11,7 +11,7 @@ export const Pagination = ({currentPageId}) => {
       <Link to={`/page/${prev}`}>
         <button>Previous</button>
       </Link>
-      <h3 className='pagination-page-num'>Page</h3>
+      <h3 className='pagination-page-num'>Page {currentPageId}</h3>
       <Link to={`/page/${next}`}>
         <button>Next</button>
       </Link>

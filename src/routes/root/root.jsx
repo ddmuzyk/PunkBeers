@@ -45,6 +45,8 @@ const Home = () => {
     }
   },[])
 
+  // Later delete this component and use the page component
+
   return (
     didFetch ?
     <div className="root-wrapper background">
@@ -60,6 +62,7 @@ const Home = () => {
               name={beer.name}
               imgUrl={beer['image_url']}
               tagline={beer.tagline}
+              id={beer.id}
             />
           })}
         </div>

@@ -38,3 +38,7 @@
   grid-gap: 20px;
   width: 80%;
 } */
+
+button {
+  cursor: pointer;
+}

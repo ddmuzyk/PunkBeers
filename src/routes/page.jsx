@@ -1,5 +1,5 @@
 import { Pagination } from "../components/pagination/Pagination";
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, Link } from "react-router-dom";
 import { BeerCard } from "../components/beer-card/BeerCard";
 
 const Page = () => {
@@ -23,6 +23,7 @@ const Page = () => {
               name={beer.name}
               imgUrl={beer['image_url']}
               tagline={beer.tagline}
+              id={beer.id}
             />
           })}
         </div>
