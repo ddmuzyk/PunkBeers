@@ -36,7 +36,7 @@ const Beer = () => {
                   })
                 )
                 :
-                <h5>su</h5>}
+                <h5>{subIngredients}</h5>}
               </div>
             )
           })}

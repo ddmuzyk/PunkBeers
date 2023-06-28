@@ -7,6 +7,10 @@
   gap: 50px;
 }
 
+.pagination-top {
+  margin-top: 150px;
+}
+
 .pagination-page-num {
   margin: 0;
 }
