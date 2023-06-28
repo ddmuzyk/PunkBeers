@@ -5,7 +5,6 @@ import Home from './routes/root/root';
 import ErrorPage from './error-page';
 import Page from './routes/page';
 import Beer from './routes/beer';
-
 import {
   createBrowserRouter,
   RouterProvider,
@@ -37,6 +36,19 @@ const router = createBrowserRouter([
         path: "/",
         element: <Home/>,
         errorElement: <ErrorPage/>,
+      },
+      {
+        path: 'page/:id',
+        element: <Page/>,
+        errorElement: <ErrorPage/>,
+        loader: async ({params}) => {
+          const res = await fetch(`https://api.punkapi.com/v2/beers?page=${params.id}&per_page=9`);
+          const data = await res.json();
+          return {
+            currentPageId: params.id,
+            data: data,
+          }
+        }
       },
       {
         path: "beer/:beer",

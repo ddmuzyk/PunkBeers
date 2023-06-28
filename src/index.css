@@ -68,6 +68,10 @@ button:focus-visible {
   }
 } */
 
+:root {
+  --card-shadow: 0 2px 5px 1px rgba(0,0,0, 0.6)
+}
+
 html {
   height: 100%;
 }
