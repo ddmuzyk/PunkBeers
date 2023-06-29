@@ -47,7 +47,6 @@ const router = createBrowserRouter([
       {
         path: 'page/:id',
         element: <Page/>,
-        errorElement: <ErrorPage/>,
         loader: async ({params}) => {
           const res = await fetch(`https://api.punkapi.com/v2/beers?page=${params.id}&per_page=9`);
           const data = await res.json();
@@ -55,25 +54,19 @@ const router = createBrowserRouter([
             currentPageId: params.id,
             data: data,
           }
-        }
+        },
+        errorElement: <ErrorPage/>,
       },
       {
         path: "beer/:beer",
         element: <Beer/>,
         loader: async ({params}) => {
-          // await sleep();
           const res = await fetch(`https://api.punkapi.com/v2/beers/${params.beer}`);
           const data = await res.json();
-          // console.log(data[0]);
           return data[0];
         },
         errorElement: <ErrorPage/>
       },
-      // {
-      //   path: '/loading/',
-      //   element: <Loader/>,
-      //   errorElement: <ErrorPage/>
-      // },
     ]
   },
 ]);

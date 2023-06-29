@@ -50,6 +50,8 @@
 
 .beer-tagline {
   font-style: italic;
+  text-align: center;
+  margin: 20px 10%;
 }
 
 .beer-description {
