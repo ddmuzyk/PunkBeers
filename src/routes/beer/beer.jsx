@@ -26,11 +26,11 @@ const Beer = () => {
       </div>
         <h1 className="beer-name">{name}</h1>
         <hr id="beer-hr"></hr>
-        <h2>{tagline}</h2>
+        <h2 className="beer-tagline">{tagline}</h2>
         <p className="beer-description">{description}</p>
         <h3>Abv: {abv}</h3>
         <h3>Ibu: {ibu}</h3>
-        <h3>Ingredients</h3>
+        <h3>Ingredients:</h3>
         <div className="ingredients">
           {Object.keys(ingredients).map((ingredient) => {
             const subIngredients = ingredients[ingredient];

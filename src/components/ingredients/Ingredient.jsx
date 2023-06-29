@@ -1,6 +1,5 @@
 export const Ingredient = ({ingredients, ingredient}) => {
   const subIngredients = ingredients[ingredient];
-  console.log(subIngredients)
   return (
     <div className={`${ingredient} ingredient`} key={ingredient}>
       <h4 className="ingredient-title">{`${ingredient.slice(0,1).toUpperCase()}${ingredient.slice(1)}`}</h4>
@@ -17,7 +16,7 @@ export const Ingredient = ({ingredients, ingredient}) => {
           }
           return (
             <div key={i}>
-              <h5>{name}: {amount}{` ${unit}`}</h5>
+              <h5>{name}: {amount}{` ${unit}`}{attribute ? `, attribute: ${attribute}` : ''}</h5>
             </div>
           )
         }
