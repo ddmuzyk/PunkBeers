@@ -48,12 +48,16 @@
   text-align: center;
 }
 
+.beer-description {
+  margin: 0 10%;
+}
+
 .ingredient-title {
   text-align: center;
 }
 
 .ingredient {
-  width: 100px;
+  width: fit-content;
   background-color: rgb(231, 228, 228);
   border-radius: 4px;
   padding: 10px 30px;
