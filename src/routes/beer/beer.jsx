@@ -34,7 +34,6 @@ const Beer = () => {
         <div className="ingredients">
           {Object.keys(ingredients).map((ingredient) => {
             const subIngredients = ingredients[ingredient];
-            
             return (
               Array.isArray(subIngredients) ? 
               <Ingredient key={ingredient} ingredients={ingredients} ingredient={ingredient}/> 
@@ -42,9 +41,6 @@ const Beer = () => {
               null
               )
           })}
-          {/* {ingredients.hops.map((hop) => {
-            
-          })} */}
         </div>
         <h4 className="beer-yeast">Yeast: {ingredients.yeast}</h4>
         <Link to={page === 1 ? '/' : `/page/${page}`}>
