@@ -49,7 +49,8 @@
 }
 
 .beer-description {
-  margin: 0 10%;
+  margin: 50px 10%;
+  text-align: center;
 }
 
 .ingredient-title {
@@ -57,6 +58,7 @@
 }
 
 .ingredient {
+  min-width: 20vw;
   width: fit-content;
   background-color: rgb(231, 228, 228);
   border-radius: 4px;
@@ -73,5 +75,17 @@
   flex-wrap: wrap;
   /* gap: 200px; */
   width: 100%;
+  margin-bottom: 50px;
+}
+
+.beer-yeast {
+  margin-bottom: 50px;
+}
+
+#beer-hr {
+  width: 80%;
+}
+
+#bottom-back-btn {
   margin-bottom: 100px;
 }
