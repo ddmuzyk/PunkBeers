@@ -1,4 +1,4 @@
-import './Page.css';
+import './page.css';
 import { Pagination } from "../../components/pagination/Pagination";
 import { useLoaderData, Link } from "react-router-dom";
 import { BeerCard } from "../../components/beer-card/BeerCard";
@@ -15,7 +15,7 @@ const Page = () => {
   }, [])
 
   return (
-    <div className="root-wrapper background">
+    <div className="page-wrapper background">
       <Header/>
       <Pagination currentPageId={currentPageId}/>
       <div className="beers-wrapper">
@@ -31,9 +31,6 @@ const Page = () => {
           })}
         </div>
       </div>
-      {/* <Link to={'/beer/2'}>
-        <button>Go</button>
-      </Link> */}
       <Pagination currentPageId={currentPageId}/>
     </div>
   )

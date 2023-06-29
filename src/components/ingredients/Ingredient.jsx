@@ -23,7 +23,8 @@ export const Ingredient = ({ingredients, ingredient}) => {
         )
       )
       :
-      <h5>{subIngredients}</h5>}
+      <h5>{subIngredients}</h5>
+      }
     </div>
   )
 }

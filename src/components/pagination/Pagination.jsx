@@ -18,13 +18,11 @@ export const Pagination = ({currentPageId}) => {
     {current !== 1 ? (
       <Link to={current === 2 ? '/' : `/page/${prev}`}>
         <button className='previous round'>&#8249;</button>
-        {/* <img className='left-arrow' src={left}/> */}
       </Link>
     ) : null}
       <h3 className='pagination-page-num'>Page {current}</h3>
       <Link to={current >= 37 ? '/' : `/page/${next}`}>
       <button className='next round'>&#8250;</button>
-      {/* <img className='left-arrow' src={right}/> */}
       </Link>
     </div>
   )

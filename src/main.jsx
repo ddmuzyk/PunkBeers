@@ -9,22 +9,6 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import './index.css'
-import { Loader } from './components/loader/Loader';
-
-function timeout(ms) {
-  return new Promise(resolve => setTimeout(resolve, ms));
-}
-async function sleep(ms) {
-  await timeout(ms);
-  return true;
-}
-
-const fetchPage = async() => {
-  const res = await fetch('https://api.punkapi.com/v2/beers?page=2&per_page=10');
-  const data = await res.json();
-  console.log(data);
-  return data;
-}
 
 const router = createBrowserRouter([
   {
