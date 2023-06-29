@@ -94,3 +94,11 @@ body {
 .background {
   background-color: whitesmoke;
 }
+
+hr {
+  height: 2px;
+  width: 100%;
+  border: 2px ;
+  color: rgb(0, 0, 0);
+  background-color: rgb(110, 86, 179);
+}

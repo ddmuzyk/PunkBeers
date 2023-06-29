@@ -7,9 +7,14 @@ export const Ingredient = ({ingredients, ingredient}) => {
       {Array.isArray(subIngredients) ? (
         subIngredients.map((subIngredient, i) => {
           const amount = subIngredient?.amount.value;
-          const unit = subIngredient?.amount.unit;
+          let unit = subIngredient?.amount.unit;
           const attribute = subIngredient.attribute;
-          const name = subIngredient.name
+          const name = subIngredient.name;
+          if (unit === 'kilograms') {
+            unit = 'kg';
+          } else if (unit === 'grams') {
+            unit = 'g';
+          }
           return (
             <div key={i}>
               <h5>{name}: {amount}{` ${unit}`}</h5>

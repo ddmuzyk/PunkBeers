@@ -46,8 +46,6 @@ const Home = () => {
     }
   },[])
 
-  // Later delete this component and use the page component
-
   return (
     didFetch ?
     <div className="root-wrapper background">

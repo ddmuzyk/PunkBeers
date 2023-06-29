@@ -8,6 +8,7 @@ export const BeerCard = ({imgUrl, name, tagline, id}) => {
         <img className='beer-card-img' src={imgUrl} alt='Beer Card'/>
       </div>
       <h3 className='beer-card-name'>{name}</h3>
+      <hr></hr>
       <p className='beer-card-tagline'>{tagline}</p>
       <div className='details-btn-container'>
         <Link to={`/beer/${id}`}>

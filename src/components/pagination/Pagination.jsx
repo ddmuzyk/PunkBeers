@@ -22,7 +22,7 @@ export const Pagination = ({currentPageId}) => {
       </Link>
     ) : null}
       <h3 className='pagination-page-num'>Page {current}</h3>
-      <Link to={current === 37 ? '/' : `/page/${next}`}>
+      <Link to={current >= 37 ? '/' : `/page/${next}`}>
       <button className='next round'>&#8250;</button>
       {/* <img className='left-arrow' src={right}/> */}
       </Link>
