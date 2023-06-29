@@ -1,7 +1,8 @@
-import { Pagination } from "../components/pagination/Pagination";
+import './Page.css';
+import { Pagination } from "../../components/pagination/Pagination";
 import { useLoaderData, Link } from "react-router-dom";
-import { BeerCard } from "../components/beer-card/BeerCard";
-import { Header } from "../components/header/Header";
+import { BeerCard } from "../../components/beer-card/BeerCard";
+import { Header } from "../../components/header/Header";
 import { useEffect } from "react";
 
 const Page = () => {

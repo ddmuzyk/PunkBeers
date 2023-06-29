@@ -19,7 +19,7 @@ const Beer = () => {
     <div className="beer-container">
       <Header/>
       <Link to={page === 1 ? '/' : `/page/${page}`}>
-        <button className="back-to-page-btn">Back to page</button>
+        <button className="back-to-page-btn">Back to list</button>
       </Link>
       <div className="beer-img-container">
         <img src={image_url} alt="Beer Image" className="beer-img"/>
@@ -48,7 +48,7 @@ const Beer = () => {
         </div>
         <h4 className="beer-yeast">Yeast: {ingredients.yeast}</h4>
         <Link to={page === 1 ? '/' : `/page/${page}`}>
-          <button id="bottom-back-btn" className="back-to-page-btn">Back to page</button>
+          <button id="bottom-back-btn" className="back-to-page-btn">Back to list</button>
         </Link>
     </div>
   )

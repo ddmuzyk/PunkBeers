@@ -1,9 +1,8 @@
-import React, {useState, useEffect} from 'react'
+import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { AppWrapper } from './AppWrapper';
-import Home from './routes/root/root';
 import ErrorPage from './components/error-page/error-page';
-import Page from './routes/page';
+import Page from './routes/page/page';
 import Beer from './routes/beer/beer';
 import {
   createBrowserRouter,

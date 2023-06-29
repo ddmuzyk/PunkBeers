@@ -62,7 +62,7 @@
 }
 
 .ingredient {
-  min-width: 20vw;
+  min-width: 30vw;
   width: fit-content;
   background-color: rgb(231, 228, 228);
   border-radius: 4px;
