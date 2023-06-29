@@ -70,11 +70,11 @@ const router = createBrowserRouter([
         },
         errorElement: <ErrorPage/>
       },
-      {
-        path: '/loading/',
-        element: <Loader/>,
-        errorElement: <ErrorPage/>
-      },
+      // {
+      //   path: '/loading/',
+      //   element: <Loader/>,
+      //   errorElement: <ErrorPage/>
+      // },
     ]
   },
 ]);

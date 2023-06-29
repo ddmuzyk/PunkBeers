@@ -1,7 +1,7 @@
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, Link } from "react-router-dom";
+import { useEffect } from "react";
 import './Beer.css';
 import { Header } from "../../components/header/Header";
-import { Link } from "react-router-dom";
 import { Ingredient } from "../../components/ingredients/Ingredient";
 
 const Beer = () => {
@@ -11,7 +11,9 @@ const Beer = () => {
   // Getting the page associated with the beer based on the fact that every page has 9 beers
   const page = id % 9 > 0 ? Math.floor(id / 9) + 1 : Math.floor(id / 9);
 
- 
+  useEffect(() => {
+    document.title = `Beers | ${name}`
+  }, [])
 
   return (
     <div className="beer-container">
@@ -24,11 +26,11 @@ const Beer = () => {
       </div>
         <h1 className="beer-name">{name}</h1>
         <hr id="beer-hr"></hr>
-        <h2>{tagline}</h2>
+        <h2 className="beer-tagline">{tagline}</h2>
         <p className="beer-description">{description}</p>
         <h3>Abv: {abv}</h3>
         <h3>Ibu: {ibu}</h3>
-        <h3>Ingredients</h3>
+        <h3>Ingredients:</h3>
         <div className="ingredients">
           {Object.keys(ingredients).map((ingredient) => {
             const subIngredients = ingredients[ingredient];
