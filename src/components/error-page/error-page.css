@@ -1,0 +1,22 @@
+.error-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 60vh;
+}
+
+.error-title {
+  margin: 0;
+  text-align: center;
+}
+
+.text-center {
+  text-align: center;
+}
+
+#error-btn {
+  width: fit-content;
+  
+}

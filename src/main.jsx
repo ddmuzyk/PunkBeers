@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react'
 import ReactDOM from 'react-dom/client'
 import { AppWrapper } from './AppWrapper';
 import Home from './routes/root/root';
-import ErrorPage from './error-page';
+import ErrorPage from './components/error-page/error-page';
 import Page from './routes/page';
 import Beer from './routes/beer/beer';
 import {
@@ -27,11 +27,10 @@ const fetchPage = async() => {
   return data;
 }
 
-// !!!!! Paginacja ma być root path !!!!!!
-
 const router = createBrowserRouter([
   {
     element: <AppWrapper/>,
+    errorElement: <ErrorPage/>,
     children: [
       {
         path: "/",
