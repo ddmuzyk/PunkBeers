@@ -1,0 +1,45 @@
+
+
+.root-wrapper {
+  min-height: 100vh;
+}
+
+/* .root-title-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 150px;
+  background: linear-gradient(to right,#4e105a, #9198e5);;
+}
+
+.root-title {
+  margin: 0;
+} */
+
+.beers-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.beers-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 50px;
+  max-width: 60vw;
+  min-height: 70vh;
+}
+
+/* .beers-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-gap: 20px;
+  width: 80%;
+} */
+
+button {
+  cursor: pointer;
+}
