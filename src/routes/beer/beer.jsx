@@ -1,6 +1,6 @@
 import { useLoaderData, Link } from "react-router-dom";
 import { useEffect } from "react";
-import './Beer.css';
+import './beer.css';
 import { Header } from "../../components/header/Header";
 import { Ingredient } from "../../components/ingredients/Ingredient";
 
